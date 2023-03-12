@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo主题收集</title>
+      <link href="/2023/03/12/tips/hexo/hexothemes/"/>
+      <url>/2023/03/12/tips/hexo/hexothemes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="收集hexo的主题"><a href="#收集hexo的主题" class="headerlink" title="收集hexo的主题"></a>收集hexo的主题</h2><h4 id="博客主题推荐"><a href="#博客主题推荐" class="headerlink" title="博客主题推荐"></a>博客主题推荐</h4><p><a href="https://github.com/starryiu/aurora-article/issues/33">https://github.com/starryiu/aurora-article/issues/33</a></p><h4 id="1-butterfly"><a href="#1-butterfly" class="headerlink" title="1.butterfly"></a>1.butterfly</h4><p><a href="https://github.com/jerryc127/hexo-theme-butterfly">链接</a></p><p>例子：httpss:&#x2F;&#x2F;yangzi0210.github.io&#x2F;</p><h4 id="2-icarus"><a href="#2-icarus" class="headerlink" title="2.icarus"></a>2.icarus</h4><p><a href="https://github.com/ppoffice/hexo-theme-icarus">链接</a></p><p>例子：httpss:&#x2F;&#x2F;qimr.gitee.io&#x2F;</p><h4 id="3-argon"><a href="#3-argon" class="headerlink" title="3.argon"></a>3.argon</h4><p><a href="https://github.com/solstice23/argon-theme">链接</a></p><h4 id="4-handsome"><a href="#4-handsome" class="headerlink" title="4.handsome"></a>4.handsome</h4><p><a href="https://www.ihewro.com/archives/489/">链接</a></p><h4 id="5-theme-next-gemini"><a href="#5-theme-next-gemini" class="headerlink" title="5.theme-next gemini"></a>5.theme-next gemini</h4><p><a href="https://github.com/lewky/hexo-theme-beep">链接</a></p><p>例子：httpss:&#x2F;&#x2F;caiyantao.gitee.io&#x2F;</p><h4 id="6-hexo-theme-shoka"><a href="#6-hexo-theme-shoka" class="headerlink" title="6.hexo-theme-shoka"></a>6.hexo-theme-shoka</h4><p>[链接](<a href="https://github.com/amehime/hexo-theme-shoka">https://github.com/amehime/hexo-theme-shoka</a></p><p>例子：httpss:&#x2F;&#x2F;shoka.lostyu.me&#x2F;</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tips </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> tips </tag>
+            
+            <tag> 收集 </tag>
+            
+            <tag> 主题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo搭建网站遇到的坑</title>
+      <link href="/2023/03/12/tips/hexo/hexoerr/"/>
+      <url>/2023/03/12/tips/hexo/hexoerr/</url>
+      
+        <content type="html"><![CDATA[<h2 id="hexo搭建网站遇到的坑"><a href="#hexo搭建网站遇到的坑" class="headerlink" title="hexo搭建网站遇到的坑"></a>hexo搭建网站遇到的坑</h2><h4 id="一-最后htxo-d-成功上传到了github，但还是打不开"><a href="#一-最后htxo-d-成功上传到了github，但还是打不开" class="headerlink" title="一.最后htxo d 成功上传到了github，但还是打不开"></a>一.最后htxo d 成功上传到了github，但还是打不开</h4><ol><li><p>等待一下，重新在新的标签页输入网址访问。</p></li><li><p>删掉本地项目，删掉远端的库。重新建一个<code>hexo init</code>，生成静态文件<code>hexo g</code>。</p><p>接着在github新建仓库，修改配置文件_config.yml，本地安装工具<code>npm install hexo-deployer-git --save</code>，清除<code>hexo clean</code>。最后重新访问。</p></li></ol><h4 id="二-hexo-d-无法上传到github。"><a href="#二-hexo-d-无法上传到github。" class="headerlink" title="二.hexo d 无法上传到github。"></a>二.hexo d 无法上传到github。</h4><ol><li><p>确保git成功安装。并且和github连接。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个就是你的邮箱，第二个就是你的用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;2816@qq.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;mosherk&quot;</span></span><br></pre></td></tr></table></figure></li><li><p>spawn git ENOENT。或者‘git’不是内部或外部命令</p><p>可能是git环境变量引起,添加即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前面的xxx是你git的安装目录</span></span><br><span class="line">xxx\bin</span><br><span class="line">xxx\libexec\git-core</span><br><span class="line"><span class="comment"># 如果想在cmd或者vscode终端使用git，还得再添加一条环境变量</span></span><br><span class="line">xxx\Git\cmd</span><br></pre></td></tr></table></figure></li><li><p>出现：fatal: Not a git repository (or any of the parent directories): .git</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删掉根目录下的  .deploy.git, 依次执行：</span></span><br><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li><li><p>可能是分支或者github不允许通过https和账号密码的形式上传</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在_config.yml中</span></span><br><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&#x27;git&#x27;</span></span><br><span class="line">repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">branch: master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将repo和bransh修改为，repo部分可以直接去github复制ssh处链接</span></span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">branch: main</span><br></pre></td></tr></table></figure><p>上面的方法是在配置了ssh的情况下才有效，配置ssh参考安安写的<a href="https://blog.csdn.net/qq_36667170/article/details/79094257">Git教程 SSH keys配置</a>，写的很棒～</p><p>如果不想配置ssh，则用官网提供的方法，用token。报错信息有链接，照着做应该没问题，我因为之前配料ssh，就没尝试这个方法。</p><p>好像是<a href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls">这个链接</a>，用token方式。</p></li></ol><br/><ol start="5"><li>查找时看到上传不了还有其他的一些方法，比如回滚，强制推送之类，不过没试过。还有读<a href="https://www.jianshu.com/p/67c57c70f275">取不到Git分支</a>，将git退回低版本即可。</li></ol><h4 id="三-在vodecode终端输入hexo的命令后，弹出”你要如何打开这个文件”"><a href="#三-在vodecode终端输入hexo的命令后，弹出”你要如何打开这个文件”" class="headerlink" title="三.在vodecode终端输入hexo的命令后，弹出”你要如何打开这个文件”"></a>三.在vodecode终端输入hexo的命令后，弹出”你要如何打开这个文件”</h4><p>不知道具体什么原因。就卸载了hexo-cli，删了hexo相关环境变量(如果有设置的话)重装。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p><a href="https://hexo.io/zh-cn/docs/troubleshooting.html">官网问题解答</a></p><p><a href="https://blog.csdn.net/yuzhiyun3536/article/details/53223048">github hexo搭建博客出现的错误记录</a></p><p><a href="https://blog.csdn.net/qq_49218475/article/details/117334256">SpawnFailed错误的几种解决方法</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tips </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> tips </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+            <tag> debug </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我的第一篇博客文章</title>
+      <link href="/2023/03/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/03/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一章·本地创建项目"><a href="#第一章·本地创建项目" class="headerlink" title="第一章·本地创建项目"></a>第一章·本地创建项目</h2><p>1.安装hexo包：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli  </span><br></pre></td></tr></table></figure><p>2.创建项目文件夹(Win)：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir xxx</span><br></pre></td></tr></table></figure><p>4.新建一个hexo<br><code>hexo init</code></p><p>3.创建文章：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] \&lt;title&gt;</span><br></pre></td></tr></table></figure><p>不设置layout，则使用配置文件中的default_layout</p><p>4.安装插件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>5.修改文件夹</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br></pre></td></tr></table></figure><p>6.构建项目</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><p>7.部署<br>hexo d</p><p>8.下载主题，把它放到 &#x2F;themes 目录下</p><p>9.修改_config.yml<br>theme: </p><p>重新生成<br>hexo clean<br>hexo g -d</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/03/12/hello-world/"/>
+      <url>/2023/03/12/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
