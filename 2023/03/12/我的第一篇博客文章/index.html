@@ -4,21 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>我的第一篇博客文章 | Suqi</title>
+  <title>我的第一篇博客文章 | 苏七</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="第一章1.安装hexo包： 1npm install -g hexo-cli    2.创建项目(Win)： 1mkdir xxx  3.创建文章：  1hexo new [layout] \&lt;title&gt;  不设置layout，则使用配置文件中的default_layout 4.安装插件npm install hexo-deployer-git –save 5.修改文件夹_confi">
+  <meta name="description" content="第一章·本地创建项目1.安装hexo包： 1npm install -g hexo-cli    2.创建项目文件夹(Win)： 1mkdir xxx  4.新建一个hexohexo init 3.创建文章： 1hexo new [layout] \&lt;title&gt;  不设置layout，则使用配置文件中的default_layout 4.安装插件 1npm install hexo-d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的第一篇博客文章">
 <meta property="og:url" content="http://example.com/2023/03/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
-<meta property="og:site_name" content="Suqi">
-<meta property="og:description" content="第一章1.安装hexo包： 1npm install -g hexo-cli    2.创建项目(Win)： 1mkdir xxx  3.创建文章：  1hexo new [layout] \&lt;title&gt;  不设置layout，则使用配置文件中的default_layout 4.安装插件npm install hexo-deployer-git –save 5.修改文件夹_confi">
+<meta property="og:site_name" content="苏七">
+<meta property="og:description" content="第一章·本地创建项目1.安装hexo包： 1npm install -g hexo-cli    2.创建项目文件夹(Win)： 1mkdir xxx  4.新建一个hexohexo init 3.创建文章： 1hexo new [layout] \&lt;title&gt;  不设置layout，则使用配置文件中的default_layout 4.安装插件 1npm install hexo-d">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-12T04:01:44.000Z">
-<meta property="article:modified_time" content="2023-03-12T04:05:56.013Z">
+<meta property="article:modified_time" content="2023-03-12T10:41:41.546Z">
 <meta property="article:author" content="苏七">
+<meta property="article:tag" content="test">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Suqi" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="苏七" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -46,7 +47,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Suqi</a>
+        <a href="/" id="logo">苏七</a>
       </h1>
       
     </div>
@@ -95,35 +96,54 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>1.安装hexo包：</p>
+        <h2 id="第一章·本地创建项目"><a href="#第一章·本地创建项目" class="headerlink" title="第一章·本地创建项目"></a>第一章·本地创建项目</h2><p>1.安装hexo包：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli  </span><br></pre></td></tr></table></figure>
 
-<p>2.创建项目(Win)：</p>
+<p>2.创建项目文件夹(Win)：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir xxx</span><br></pre></td></tr></table></figure>
 
-<p>3.创建文章： </p>
+<p>4.新建一个hexo<br><code>hexo init</code></p>
+<p>3.创建文章：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] \&lt;title&gt;</span><br></pre></td></tr></table></figure>
 
 <p>不设置layout，则使用配置文件中的default_layout</p>
-<p>4.安装插件<br>npm install hexo-deployer-git –save</p>
-<p>5.修改文件夹<br>_config.yml</p>
-<p>4.构建项目</p>
+<p>4.安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>5.修改文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br></pre></td></tr></table></figure>
+
+<p>6.构建项目</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 
-
+<p>7.部署<br>hexo d</p>
+<p>8.下载主题，把它放到 &#x2F;themes 目录下</p>
+<p>9.修改_config.yml<br>theme: </p>
+<p>重新生成<br>hexo clean<br>hexo g -d</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="clf4w1a0c0001iwg4h1v8723y" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="clf5d5gte0000zgg42pn93tvu" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/" rel="tag">test</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
+  
+    <a href="/2023/03/12/tips/hexo/hexoerr/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo搭建网站遇到的坑
+        
+      </div>
+    </a>
   
   
     <a href="/2023/03/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,12 +162,33 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/hexo/">hexo</a></li></ul></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/" rel="tag">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%BB%E9%A2%98/" rel="tag">主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%B6%E9%9B%86/" rel="tag">收集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" rel="tag">网站搭建</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/debug/" style="font-size: 10px;">debug</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/%E4%B8%BB%E9%A2%98/" style="font-size: 10px;">主题</a> <a href="/tags/%E6%94%B6%E9%9B%86/" style="font-size: 10px;">收集</a> <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">网站搭建</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -164,6 +205,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/03/12/tips/hexo/hexothemes/">hexo主题收集</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/12/tips/hexo/hexoerr/">hexo搭建网站遇到的坑</a>
+          </li>
         
           <li>
             <a href="/2023/03/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
