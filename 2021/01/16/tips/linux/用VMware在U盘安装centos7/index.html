@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>利用VMware在U盘中安装Linux(centos7）超详细完整版 | 苏七</title><meta name="author" content="苏七"><meta name="copyright" content="苏七"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="利用VMware在U盘中安装Linux(centos7）超详细完整版这篇安装流程是百度了多篇流程并结合自己的经验合写而成，干货满满，多图预警~ 一、下载Linux(centos7)安装的版本是CentOS-7-x86_64-Everything-2009，可以在清华的镜像站下载：https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;centos&#x2F;7.9.2009&#x2F;isos&#x2F;x8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用VMware在U盘中安装Linux(centos7）超详细完整版">
+<meta property="og:url" content="http://example.com/2021/01/16/tips/linux/%E7%94%A8VMware%E5%9C%A8U%E7%9B%98%E5%AE%89%E8%A3%85centos7/index.html">
+<meta property="og:site_name" content="苏七">
+<meta property="og:description" content="利用VMware在U盘中安装Linux(centos7）超详细完整版这篇安装流程是百度了多篇流程并结合自己的经验合写而成，干货满满，多图预警~ 一、下载Linux(centos7)安装的版本是CentOS-7-x86_64-Everything-2009，可以在清华的镜像站下载：https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;centos&#x2F;7.9.2009&#x2F;isos&#x2F;x8">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/myimg/favicon.jpg">
+<meta property="article:published_time" content="2021-01-15T17:04:01.000Z">
+<meta property="article:modified_time" content="2023-03-14T17:46:24.657Z">
+<meta property="article:author" content="苏七">
+<meta property="article:tag" content="tips">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="u盘">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/myimg/favicon.jpg"><link rel="shortcut icon" href="/myimg/favicon.jpg"><link rel="canonical" href="http://example.com/2021/01/16/tips/linux/%E7%94%A8VMware%E5%9C%A8U%E7%9B%98%E5%AE%89%E8%A3%85centos7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '利用VMware在U盘中安装Linux(centos7）超详细完整版',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-15 01:46:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/myimg/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="苏七"><span class="site-name">苏七</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">利用VMware在U盘中安装Linux(centos7）超详细完整版</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-15T17:04:01.000Z" title="发表于 2021-01-16 01:04:01">2021-01-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-14T17:46:24.657Z" title="更新于 2023-03-15 01:46:24">2023-03-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tips/">tips</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tips/linux/">linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="利用VMware在U盘中安装Linux(centos7）超详细完整版"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="利用VMware在U盘中安装Linux-centos7）超详细完整版"><a href="#利用VMware在U盘中安装Linux-centos7）超详细完整版" class="headerlink" title="利用VMware在U盘中安装Linux(centos7）超详细完整版"></a>利用VMware在U盘中安装Linux(centos7）超详细完整版</h2><p>这篇安装流程是百度了多篇流程并结合自己的经验合写而成，干货满满，多图预警~</p>
+<h3 id="一、下载Linux-centos7"><a href="#一、下载Linux-centos7" class="headerlink" title="一、下载Linux(centos7)"></a>一、下载Linux(centos7)</h3><p>安装的版本是CentOS-7-x86_64-Everything-2009，可以在清华的<br>镜像站下载：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/">https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64&#x2F;</a></p>
+<h3 id="二、VMware准备"><a href="#二、VMware准备" class="headerlink" title="二、VMware准备"></a>二、VMware准备</h3><p>先把服务打开，不知道在哪打开的直接搜索。然后都打开吧，反正也没几个。<br><img src="https://img-blog.csdnimg.cn/20210113203825873.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70#pic_center" alt="VMware服务"></p>
+<h3 id="三、新建虚拟机"><a href="#三、新建虚拟机" class="headerlink" title="三、新建虚拟机"></a>三、新建虚拟机</h3><p>1.在VMware中点击文件—新建虚拟机。<br>选典型配置<br><img src="https://img-blog.csdnimg.cn/20210113205842585.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>2.直接安装程序光盘映像文件，检测到centos7。(当然你也可以选稍后安装，根据自己的需要配置就好)<br><img src="https://img-blog.csdnimg.cn/20210113210418162.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>3.虚拟机名称自行取，位置也由你自行决定。<br><img src="https://img-blog.csdnimg.cn/20210113211038464.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>4.点击自定义硬件。<br><img src="https://img-blog.csdnimg.cn/20210113211526321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5.USB控制器，改为USB3.0<br><img src="https://img-blog.csdnimg.cn/20210113212150635.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>6.删掉硬盘(SCSI)，确定，然后开机。<br><em>（我当时没有看到硬盘，然后开机再关机，就能看到硬盘自动显示出来了，然后再删掉。如果你也遇到这种情况，我建议你也开机关机再把硬盘删掉，否则可能在后面选磁斜体样式盘的时候有麻烦）</em><br><img src="https://img-blog.csdnimg.cn/20210113211758359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>到这里算是完成了第一阶段，之后的安装步骤如果安装不成功，可以格式化U盘后，直接从这一步开始做。</p>
+<h3 id="四、安装（一）"><a href="#四、安装（一）" class="headerlink" title="四、安装（一）"></a>四、安装（一）</h3><p>1.开机后就会显示这个页面<br><img src="https://img-blog.csdnimg.cn/20210114012240580.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">   </p>
+<p>2.在秒数倒数完之前(当然你也可以按上下键让它取消读秒)，在VMware的右下角这里连接U盘。<br><img src="https://img-blog.csdnimg.cn/20210114011649895.png" alt="在这里插入图片描述"><br>3.然后选择第二个Test this media &amp; install CentOS7，接着按<strong>tab键</strong>，把下面那行白色字修改为 </p>
+<blockquote>
+<p>vmlinuz initrd&#x3D;initrd.img linux dd quiet</p>
+</blockquote>
+<p>最后回车。这是为了寻找并配置索所要安装的U盘。<br><img src="https://img-blog.csdnimg.cn/20210113213632642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="安装之一"><br>4.等待了一会儿之后，就会进入这样的页面。然后就能看到显然这个就是我的U盘了。<br><img src="https://img-blog.csdnimg.cn/20210114150636820.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5.记住这个名字，我的是sr0，你自己要根据自己的情况记下来。<br>然后关机，开机，连接U盘，按tab键(这里和上面的步骤一样)。<br>按tab键后就将下面白色那行字修改为：</p>
+<blockquote>
+<p>vmlinuz initrd&#x3D;initrd.img inst.stage2&#x3D;hd:&#x2F;dev&#x2F;<strong>sr0</strong> quiet</p>
+</blockquote>
+<p>注意加粗部分，是你刚刚记下的，而我的是sr0。<br>改完后，<br><img src="https://img-blog.csdnimg.cn/20210114151817174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="U盘是sr0"></p>
+<h3 id="五、安装（二）"><a href="#五、安装（二）" class="headerlink" title="五、安装（二）"></a>五、安装（二）</h3><p>1.经过上面的步骤，配置基本完成了。接下来是系统的设置和正式安装。第一步是设置语言。可以在下面的框中输入ch搜索，选择中文。<br><img src="https://img-blog.csdnimg.cn/20210114163416882.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="语言"><br>2.时区看一下时间对不对，不对改一下就好。<br>软件选择。先设置这个，因为如果安装的软件比较多的话，系统检查软件依赖关系就有点慢，这时候我们可以配置其他选项。<br>选GUI，可以全部选安装，也可以根据你自己的需要来选。<br><img src="https://img-blog.csdnimg.cn/20210114185036532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.接下来安装位置，这里要注意一下。点进去以后，发现空间不够，尽管我的U盘是空的。但没关系，我们可以先选自动分配，在点击完成。<br><img src="https://img-blog.csdnimg.cn/20210115224914319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="U盘空间不够"><br>4.点击完成后就会弹出这样的提示框。点击回收空间<br><img src="https://img-blog.csdnimg.cn/20210115225021368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="回收空间"><br>5.接着选中U盘——全部删除——回收空间。<br><img src="https://img-blog.csdnimg.cn/20210115225756972.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6.这时候就会返回前面安装信息摘要的页面，再次点击安装位置进去，这次选<strong>我要分配分区</strong>，点完成。<br>（当然你依然选自动分配分区也无妨，跳过接下来的几步就好）<br>首先要添加的挂载是swap，大小为物理内存大小的2倍。(可以点“点这里自动创建他们”，查看swap的推荐大小)<br><img src="https://img-blog.csdnimg.cn/20210115231151753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7.接着是挂载&#x2F;，可以把剩余的内存分配掉。<br>主要是挂载swap和&#x2F;，其余的自便。<br>也可以点“点击这里自动创建”，在进行内存分配。<br><img src="https://img-blog.csdnimg.cn/20210115234546848.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>8.完成——接受更改<br><img src="https://img-blog.csdnimg.cn/2021011523461837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>9.至于网络你也可以连上，或者不用管。<br><img src="https://img-blog.csdnimg.cn/20210115234750616.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>10.现在系统的设置基本完成了，点开始安装<br><img src="https://img-blog.csdnimg.cn/20210115235526579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>11.设置root密码<br><img src="https://img-blog.csdnimg.cn/20210115235614547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dpbGl4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>12.等待完成，我的是3.0的U盘，大概几十分钟就完成了。<br>完成后关掉虚拟机，会弹出格式化U盘的提示，别管他，取消关掉，重启电脑，设置boot为U盘启动。这个根据你电脑来，一般是F2或delete键，不懂自行百度就不多说了。</p>
+<h3 id="六、selinux参数值设置"><a href="#六、selinux参数值设置" class="headerlink" title="六、selinux参数值设置"></a>六、selinux参数值设置</h3><p>启动centOS7后可能卡在开机界面，这可能是selinux参数值不正确，可以参考<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42470947/article/details/109111080">启动 CentOS7 系统时卡在开机界面 7 解决办法</a></p>
+<p>网络配置弄好后再写了，到时再把链接放上来。</p>
+<p>————————————————</p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013537471/article/details/106155473">centos7启动盘制作和安装(原系统为centos6.5)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/chindax/article/details/45152393">通过VMWare将CentOS安装在U盘</a></p>
+<p>每个步骤的相关介绍可以看这个<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_29384657/article/details/51152954">CentOS 7 安装教程、硬盘分区、LVM、网络配置、软件源配置、制作</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">苏七</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/01/16/tips/linux/%E7%94%A8VMware%E5%9C%A8U%E7%9B%98%E5%AE%89%E8%A3%85centos7/">http://example.com/2021/01/16/tips/linux/%E7%94%A8VMware%E5%9C%A8U%E7%9B%98%E5%AE%89%E8%A3%85centos7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">苏七</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/tips/">tips</a><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/u%E7%9B%98/">u盘</a></div><div class="post_share"><div class="social-share" data-image="/myimg/favicon.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/myimg/wechat.png" target="_blank"><img class="post-qr-code-img" src="/myimg/wechat.png" alt="微信支付"/></a><div class="post-qr-code-desc">微信支付</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/08/14/html5/solve/npm%20ERR!-01/" title="npm时遇到npm ERR! A complete log of this run can be found in"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">npm时遇到npm ERR! A complete log of this run can be found in</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/12/tips/hexo/hexobuild/" title="用hexo建静态博客全过程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">用hexo建静态博客全过程</div></div></a></div><div><a href="/2023/03/12/tips/hexo/hexoerr/" title="hexo搭建网站遇到的坑"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">hexo搭建网站遇到的坑</div></div></a></div><div><a href="/2023/03/12/tips/hexo/hexothemes/" title="hexo主题收集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">hexo主题收集</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/myimg/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">苏七</div><div class="author-info__description">不畏风，不畏雨</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mosherk"><i class="fab fa-github"></i><span>关注我&gt;_&lt;</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">网站建好啦✨</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8VMware%E5%9C%A8U%E7%9B%98%E4%B8%AD%E5%AE%89%E8%A3%85Linux-centos7%EF%BC%89%E8%B6%85%E8%AF%A6%E7%BB%86%E5%AE%8C%E6%95%B4%E7%89%88"><span class="toc-number">1.</span> <span class="toc-text">利用VMware在U盘中安装Linux(centos7）超详细完整版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BDLinux-centos7"><span class="toc-number">1.1.</span> <span class="toc-text">一、下载Linux(centos7)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81VMware%E5%87%86%E5%A4%87"><span class="toc-number">1.2.</span> <span class="toc-text">二、VMware准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">1.3.</span> <span class="toc-text">三、新建虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%89%E8%A3%85%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">四、安装（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AE%89%E8%A3%85%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">五、安装（二）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81selinux%E5%8F%82%E6%95%B0%E5%80%BC%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.6.</span> <span class="toc-text">六、selinux参数值设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%EF%BC%9A"><span class="toc-number">1.7.</span> <span class="toc-text">参考：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/life/hobby/taoyuanming/" title="陶渊明诗歌">陶渊明诗歌</a><time datetime="2023-03-12T15:35:55.000Z" title="发表于 2023-03-12 23:35:55">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/tips/hexo/hexothemes/" title="hexo主题收集">hexo主题收集</a><time datetime="2023-03-12T12:07:24.000Z" title="发表于 2023-03-12 20:07:24">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/tips/hexo/hexoerr/" title="hexo搭建网站遇到的坑">hexo搭建网站遇到的坑</a><time datetime="2023-03-12T11:48:07.000Z" title="发表于 2023-03-12 19:48:07">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/tips/hexo/hexobuild/" title="用hexo建静态博客全过程">用hexo建静态博客全过程</a><time datetime="2023-03-12T04:01:44.000Z" title="发表于 2023-03-12 12:01:44">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/18/html5/solve/npm%20install%E6%8A%A5%E9%94%99/" title="npm install报错：Unexpected token $ in JSON at">npm install报错：Unexpected token $ in JSON at</a><time datetime="2023-01-18T14:13:53.000Z" title="发表于 2023-01-18 22:13:53">2023-01-18</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(45deg, &quot;#ffffff&quot;, &quot;#87CEEB&quot; 50%, &quot;#6A5ACD&quot; 100%)"><div id="footer-wrap"><div class="copyright">&copy;2023 By 苏七</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">hi，你来看我的博客啦~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
