@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>JS零碎点 | 苏七</title><meta name="author" content="苏七"><meta name="copyright" content="苏七"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="{}&#x3D;&#x3D;{};  结果为false。 &#x3D;&#x3D;&#x3D;1234567undefined &#x3D;&#x3D; null;  &#x2F;&#x2F;trueundefined &#x3D;&#x3D;&#x3D; null; &#x2F;&#x2F;false+0 &#x3D;&#x3D;&#x3D; -0           &#x2F;&#x2F;true  Object.is(+0,-0)    &#x2F;&#x2F;falseNaN &#x3D;&#x3D;&#x3D; NaN         &#x2F;&#x2F;falseObject.is(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS零碎点">
+<meta property="og:url" content="http://example.com/2021/12/04/html5/js/JS%E9%9B%B6%E7%A2%8E%E7%82%B9/index.html">
+<meta property="og:site_name" content="苏七">
+<meta property="og:description" content="{}&#x3D;&#x3D;{};  结果为false。 &#x3D;&#x3D;&#x3D;1234567undefined &#x3D;&#x3D; null;  &#x2F;&#x2F;trueundefined &#x3D;&#x3D;&#x3D; null; &#x2F;&#x2F;false+0 &#x3D;&#x3D;&#x3D; -0           &#x2F;&#x2F;true  Object.is(+0,-0)    &#x2F;&#x2F;falseNaN &#x3D;&#x3D;&#x3D; NaN         &#x2F;&#x2F;falseObject.is(">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/myimg/favicon.jpg">
+<meta property="article:published_time" content="2021-12-04T13:34:28.000Z">
+<meta property="article:modified_time" content="2023-05-18T07:32:55.817Z">
+<meta property="article:author" content="苏七">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="总结">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/myimg/favicon.jpg"><link rel="shortcut icon" href="/myimg/favicon.jpg"><link rel="canonical" href="http://example.com/2021/12/04/html5/js/JS%E9%9B%B6%E7%A2%8E%E7%82%B9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JS零碎点',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-05-18 15:32:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/myimg/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="苏七"><span class="site-name">苏七</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JS零碎点</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-04T13:34:28.000Z" title="发表于 2021-12-04 21:34:28">2021-12-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-18T07:32:55.817Z" title="更新于 2023-05-18 15:32:55">2023-05-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/html5/">html5</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/html5/js/">js</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JS零碎点"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ol>
+<li>{}&#x3D;&#x3D;{};  结果为false。</li>
+<li>&#x3D;&#x3D;&#x3D;<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span>;  <span class="comment">//true</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span>; <span class="comment">//false</span></span><br><span class="line">+<span class="number">0</span> === -<span class="number">0</span>           <span class="comment">//true  </span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(+<span class="number">0</span>,-<span class="number">0</span>)    <span class="comment">//false</span></span><br><span class="line"><span class="title class_">NaN</span> === <span class="title class_">NaN</span>         <span class="comment">//false</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">is</span>(<span class="title class_">NaN</span>,<span class="title class_">NaN</span>)  <span class="comment">//true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>NaN &#x3D;&#x3D; NaN;  结果为false</li>
+<li>JavaScript执行上下文：可以看做是代码的执行环境，他决定这代码的作用域。分为三种：<strong>全局环境、函数环境、Eavl环境</strong>。</li>
+<li>被Boolean()转换为false的有：””、0、NaN、null、undefined</li>
+<li>switch(num)中的num和case处的数值的匹配必须是全等的<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">2</span>;</span><br><span class="line"><span class="title function_">swithc</span>(<span class="params">num</span>)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="comment">//TODO</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="comment">//TODO</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>简单类型(值类型&#x2F;基本数据类型)：存储时变量存储的是值本身</li>
+</ol>
+<ul>
+<li>string,number,Boolean,undefined,null(这个typeof(null)为object)</li>
+</ul>
+<p>复杂数据类型(引用类型)：在存储时变量存储的仅仅是地址引用</p>
+<ul>
+<li>通过new关键字创建的对象(系统对象，自定义对象)，如Object,Array,Date</li>
+</ul>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a65720593c4b4e96ab533709f204c022~tplv-k3u1fbpfcp-watermark.image" alt="090eb48bd78d69f8ae96d9fff57843b.png"></p>
+<ol start="8">
+<li>可以用 + 来巧妙地将字符串转化为数字</li>
+</ol>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3bb00c62a0714ff4b003a4525d41b370~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<ol start="9">
+<li><p>保持2位数，不需要手动判断再补0，比如时分秒的情况。<br><code>00$&#123;hours&#125;.slice(-2)</code><br>先补上，在从后面截取两位</p>
+</li>
+<li><p>parsInt针对的是字符串值，传递非字符串参数首先会被强制类型转换为字符串</p>
+</li>
+<li><p>事件<br>阻止默认事件：<br><br>e.preventDefault() <br><br>e.returnValue &#x3D; false  (IE)<br><br>阻止冒泡:<br><br>e.stopProagation()<br><br>e.cancelBubble()  (IE)</p>
+</li>
+</ol>
+<p>onBlur:当失去输入焦点后产生该事件<br><br>onFocus:当输入获得焦点后，产生该文件<br><br>onchange:当文字值改变时，产生该事件<br><br>onselect:当文字加亮后，产生该事件<br><br>onClick：当组件被点击时产生的事件<br></p>
+<ol start="12">
+<li>可选链（?.）:防止值为undefined和null时报错<br><code>let arr = res &amp;&amp; res.data &amp;&amp; res.data.list</code></li>
+</ol>
+<p>可选链的写法：<br><code>let arr = res?.data?.list </code></p>
+<ol start="13">
+<li><p>空值运算符（??&#x3D;）.当??&#x3D;左边的值为空的时候，就会将右边的值赋给它</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;狗蛋&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> newName = <span class="string">&#x27;张三&#x27;</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> newNum = <span class="string">&#x27;123&#x27;</span></span><br><span class="line">name ??= newName;  <span class="comment">// b =&#x27;狗蛋&#x27;</span></span><br><span class="line">num ??= newNum  <span class="comment">// c = &#x27;123&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript全局属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span>（编码相关）+ <span class="number">2</span>（数据处理）+ <span class="number">4</span>（数字相关）+ <span class="number">2</span>（其他）</span><br><span class="line">编码相关：</span><br><span class="line">    <span class="built_in">escape</span>()、<span class="built_in">unescape</span>()、<span class="built_in">encodeURI</span>()、<span class="built_in">decodeURI</span>()、</span><br><span class="line">    <span class="built_in">encodeURIComponent</span>()、<span class="built_in">decodeURIComponent</span>()</span><br><span class="line">数据处理：</span><br><span class="line">    <span class="title class_">Number</span>()、<span class="title class_">String</span>()</span><br><span class="line">数字相关：</span><br><span class="line">    <span class="built_in">isFinite</span>()、<span class="built_in">isNaN</span>()、<span class="built_in">parseFloat</span>()、<span class="built_in">parseInt</span>()</span><br><span class="line">特殊：</span><br><span class="line">    <span class="built_in">eval</span>()</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eaf9c195e0174fe49b31ee1122d13e14~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<ol start="15">
+<li>一些内部对象</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/jsref/obj_navigator.asp">Navagator</a>：提供有关浏览器的信息<br><br><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/jsref/obj_window.asp">Window</a>：Window对象处于对象层次的最顶层，它提供了处理Navagator窗口的方法和属性<br><br><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/jsref/obj_location.asp">Location</a>：提供了与当前打开的URL一起工作的方法和属性，是一个静态的对象<br><br><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/jsref/api_history.asp">History</a>：提供了与历史清单有关的信息<br><br><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/jsref/dom_obj_document.asp">Document</a>：包含与文档元素一起工作的对象，它将这些元素封装起来供编程人员使用</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cctv_007/article/details/121352462">一些参考的demo</a></p>
+<ol start="16">
+<li><p>正则一些符号：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* ：出现零到多次</span><br><span class="line">+： 出现一到多次</span><br><span class="line">？：出现零次或者一次</span><br><span class="line"> .  : 除了\n以外的任意字符</span><br><span class="line">&#123;n&#125; : 出现n次</span><br><span class="line">&#123;n,&#125; : 出现n到多次</span><br><span class="line">&#123;n,m&#125; : 出现n到m次</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript内置的可迭代对象：<br>一个数据结构只要具有Symbol.iterator属性，就可以认为是“可遍历的”（iterable）</p>
+</li>
+</ol>
+<ul>
+<li>Array</li>
+<li>Map</li>
+<li>Set</li>
+<li>String</li>
+<li>TypedArray</li>
+<li>函数的 arguments 对象</li>
+<li>NodeList 对象</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/iterator#%E9%BB%98%E8%AE%A4-Iterator-%E6%8E%A5%E5%8F%A3">阮一峰-默认-Iterator-接口</a></p>
+<ol start="18">
+<li>js内置对象</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>内置对象</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Arguments</td>
+<td>函数参数集合</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>布尔对象</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>日期对象</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>异常对象</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>函数构造器</td>
+</tr>
+<tr>
+<td>Math</td>
+<td>数学对象</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>数值对象</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>基础对象</td>
+</tr>
+<tr>
+<td>RegExp</td>
+<td>正则表达式</td>
+</tr>
+<tr>
+<td>String</td>
+<td>字符串对象</td>
+</tr>
+</tbody></table>
+<ol start="19">
+<li>数组的一些API</li>
+</ol>
+<ul>
+<li><p>arr.filter()用于筛选出满足要求的数组元素，并返回新的数组；</p>
+</li>
+<li><p>arr.some()用于检测数组是否有满足条件的元素，只要存在元素满足要求，则返回true，否则返回false；</p>
+</li>
+<li><p>arr.every()用于检测数组的所有元素是否都满足条件，都满足条件时返回true，否则返回false；</p>
+</li>
+<li><p>arr.map()会对数组中每个元素进行单独判断，返回true或者false，作为新数组的元素</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/test/question/done?tid=57008522&qid=2218615#summary">牛客试题例子</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43814020/article/details/106678432"># ES5新增方法：forEach，filter，some，map的用法和区别</a></p>
+<hr>
+
+<ol start="20">
+<li><p>+new Array(017)，输出为：NaN<br>017，八进制，转为15，所以创建长度为15的数组，“+”又转为数字，结果就为NaN了</p>
+<hr>
+</li>
+<li><p>循环方法的遍历时的比较（待测试）<br><code>let array = [,1,,2,,3];</code><br><code>array = array.map((i) =&gt; ++i)</code></p>
+</li>
+</ol>
+<p>ES5：</p>
+<ul>
+<li><p>orEach(), filter(), reduce(), every() 和some()都会跳过空位。</p>
+</li>
+<li><p>map()会跳过空位，但会保留这个值</p>
+</li>
+<li><p>join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。</p>
+</li>
+<li><p>ES6 中都会将空位当做undefined</p>
+</li>
+</ul>
+<ol start="22">
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> []);<span class="comment">//object</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="string">&#x27;[]&#x27;</span>);<span class="comment">//string</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="number">1</span>);<span class="comment">//number</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="literal">true</span>);<span class="comment">//boolean</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="literal">null</span>);<span class="comment">//object</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="literal">undefined</span>);<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> &#123;<span class="attr">id</span>:<span class="number">2</span>&#125;);<span class="comment">//object</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> fn);<span class="comment">//function</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>string 和 String<br>字符串有length，是装箱有关，最后还是基本类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="title class_">String</span>(<span class="string">&#x27;xxx&#x27;</span>)</span><br><span class="line">str <span class="keyword">instanceof</span> <span class="title class_">String</span>    <span class="comment">//false</span></span><br><span class="line"><span class="keyword">let</span> str1 = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;sdf&quot;</span>)</span><br><span class="line">str1 <span class="keyword">instanceof</span> <span class="title class_">String</span>  <span class="comment">//true</span></span><br><span class="line"><span class="keyword">typeof</span> str1            <span class="comment">//&#x27;object&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则<br>\d      匹配一个数字字符。等价于 [0-9]。<br>\D     匹配一个非数字字符。等价于 [^0-9]。<br>\f       匹配一个换页符。等价于 \x0c 和 \cL。<br>\n      匹配一个换行符。等价于 \x0a 和 \cJ。<br>\r       匹配一个回车符。等价于 \x0d 和 \cM。<br>\s      匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。<br>\S      匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。<br>\t       匹配一个制表符。等价于 \x09 和 \cI。<br>\v      匹配一个垂直制表符。等价于 \x0b 和 \cK。<br>\w     匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。<br>\W    匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。</p>
+</li>
+<li><p>this指向</p>
+</li>
+</ol>
+<ul>
+<li>函数调用时，指向window,严格模式下指向undefined </li>
+<li>以方法调用时，指向调用该方法的对象</li>
+<li>使用new创建一个对象时，指向该对象</li>
+<li>call,apply ,bind可以改变this指向 区别，传参不同</li>
+</ul>
+<ol start="24">
+<li>不支持冒泡的事件</li>
+</ol>
+<p>①focus<br>②blur<br>③mouseenter<br>④mouseleave<br>⑤load<br>⑥unload <br>⑦resize</p>
+<ol start="25">
+<li><p>对数值使用方法<br>2.toString()将会优先将小数点解析为数字小数点<br>以下写法可以规避这种情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(2).toString()</span><br><span class="line">2 .toString()</span><br><span class="line">2..toString()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关于delete：<br>一、delete是干什么的：</p>
+</li>
+</ol>
+<ul>
+<li>delete 操作符用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。</li>
+</ul>
+<p>二、delete使用要注意什么：</p>
+<ul>
+<li><p>如果你试图删除的属性不存在，那么delete将不会起任何作用，但仍会返回true</p>
+</li>
+<li><p>如果对象的原型链上有一个与待删除属性同名的属性，那么删除属性之后，对象会使用原型链上的那个属性（也就是说，delete操作只会在自身的属性上起作用）</p>
+</li>
+<li><p>任何使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/var">var</a> 声明的属性不能从全局作用域或函数的作用域中删除。在eval()函数中可以被删除。</p>
+<ul>
+<li>这样的话，delete操作不能删除任何在全局作用域中的函数（无论这个函数是来自于函数声明或函数表达式）</li>
+<li>除了在全局作用域中的函数不能被删除，在对象(object)中的函数是能够用delete操作删除的。</li>
+</ul>
+</li>
+<li><p>任何用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let">let</a>或<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/const">const</a>声明的属性不能够从它被声明的作用域中删除。</p>
+</li>
+<li><p>不可设置的(Non-configurable)属性不能被移除。这意味着像<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>内置对象的属性以及使用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty()</a>方法设置为不可设置的属性不能被删除</p>
+</li>
+<li><p>未使用var申明的全局变量可以被删除</p>
+</li>
+</ul>
+<p>引自：MDN <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/delete">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/delete</a></p>
+<p>摘自<a target="_blank" rel="noopener" href="https://www.nowcoder.com/test/question/done?tid=57189760&qid=2203205#summary">牛客</a></p>
+<ol start="27">
+<li>在ECMAScript6 中,Promise的状态</li>
+</ol>
+<ul>
+<li>1.一个promise可能有三种状态：等待（pending）、已完成（fulfilled又称resolved）、已拒绝（rejected）</li>
+<li>2.一个promise的状态只可能从“等待”转到“完成”态或者“拒绝”态，不能逆向转换，同时“完成”态和“拒绝”态不能相互转换</li>
+<li>3.promise必须实现then方法（可以说，then就是promise的核心），而且then必须返回一个promise，同一个promise的then可以调用多次，并且回调的执行顺序跟它们被定义时的顺序一致</li>
+<li>4.then方法接受两个参数，第一个参数是成功时的回调，在promise由“等待”态转换到“完成”态时调用，另一个是失败时的回调，在promise由“等待”态转换到“拒绝”态时调用。同时，then可以接受另一个promise传入，也接受一个“类then”的对象或方法，即thenable对象。<br>来自<a target="_blank" rel="noopener" href="https://www.nowcoder.com/test/question/done?tid=57783645&qid=44609#summary">牛客题</a></li>
+</ul>
+<ol start="28">
+<li><p>arguments是函数（除了箭头函数外）的内置对象，它是一个伪数组；用于获取函数的全部参数</p>
+</li>
+<li><p>JavaScript中0&#x2F;0的结果是NAN</p>
+</li>
+<li><p>严格模式</p>
+</li>
+</ol>
+<ul>
+<li>this指向undefined</li>
+<li>变量必须先声明再复制，且不允许删除变量或(对象)函数</li>
+<li>函数不许重名参数</li>
+<li>立即执行函数的this指向取决于上下环境</li>
+<li>构造函数的this指向实例对象</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">苏七</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/12/04/html5/js/JS%E9%9B%B6%E7%A2%8E%E7%82%B9/">http://example.com/2021/12/04/html5/js/JS%E9%9B%B6%E7%A2%8E%E7%82%B9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">苏七</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/js/">js</a><a class="post-meta__tags" href="/tags/%E6%80%BB%E7%BB%93/">总结</a></div><div class="post_share"><div class="social-share" data-image="/myimg/favicon.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/myimg/wechat.png" target="_blank"><img class="post-qr-code-img" src="/myimg/wechat.png" alt="微信支付"/></a><div class="post-qr-code-desc">微信支付</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/06/html5/js/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" title="js字符串方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">js字符串方法</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/14/html5/solve/npm%20ERR!-01/" title="npm时遇到npm ERR! A complete log of this run can be found in"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">npm时遇到npm ERR! A complete log of this run can be found in</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/10/html5/js/js-this/" title="举例说明this的四种绑定规则和遇到箭头函数时的情况"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-10</div><div class="title">举例说明this的四种绑定规则和遇到箭头函数时的情况</div></div></a></div><div><a href="/2021/12/28/html5/js/js%E6%95%B0%E7%BB%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95/" title="JavaScript：数组的各类属性和方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-28</div><div class="title">JavaScript：数组的各类属性和方法</div></div></a></div><div><a href="/2021/12/06/html5/js/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" title="js字符串方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-06</div><div class="title">js字符串方法</div></div></a></div><div><a href="/2022/05/17/html5/html-css/html-css%E9%9B%B6%E7%A2%8E%E7%82%B9/" title="HTML&#x2F;CSS零碎点"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-17</div><div class="title">HTML&#x2F;CSS零碎点</div></div></a></div><div><a href="/2023/01/18/html5/solve/npm%20install%E6%8A%A5%E9%94%99/" title="npm install报错：Unexpected token $ in JSON at"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-18</div><div class="title">npm install报错：Unexpected token $ in JSON at</div></div></a></div><div><a href="/2021/08/14/html5/solve/npm%20ERR!-01/" title="npm时遇到npm ERR! A complete log of this run can be found in"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-14</div><div class="title">npm时遇到npm ERR! A complete log of this run can be found in</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/myimg/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">苏七</div><div class="author-info__description">不畏风，不畏雨</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mosherk"><i class="fab fa-github"></i><span>关注我&gt;_&lt;</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">网站建好啦✨</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/life/hobby/taoyuanming/" title="陶渊明诗歌">陶渊明诗歌</a><time datetime="2023-03-12T15:35:55.000Z" title="发表于 2023-03-12 23:35:55">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/tips/hexo/hexothemes/" title="hexo主题收集">hexo主题收集</a><time datetime="2023-03-12T12:07:24.000Z" title="发表于 2023-03-12 20:07:24">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/tips/hexo/hexoerr/" title="hexo搭建网站遇到的坑">hexo搭建网站遇到的坑</a><time datetime="2023-03-12T11:48:07.000Z" title="发表于 2023-03-12 19:48:07">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/12/tips/hexo/hexobuild/" title="用hexo建静态博客全过程">用hexo建静态博客全过程</a><time datetime="2023-03-12T04:01:44.000Z" title="发表于 2023-03-12 12:01:44">2023-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/18/html5/solve/npm%20install%E6%8A%A5%E9%94%99/" title="npm install报错：Unexpected token $ in JSON at">npm install报错：Unexpected token $ in JSON at</a><time datetime="2023-01-18T14:13:53.000Z" title="发表于 2023-01-18 22:13:53">2023-01-18</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(45deg, &quot;#ffffff&quot;, &quot;#87CEEB&quot; 50%, &quot;#6A5ACD&quot; 100%)"><div id="footer-wrap"><div class="copyright">&copy;2023 By 苏七</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">hi，你来看我的博客啦~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
